@@ -42,7 +42,7 @@ export const nav = [
 
 export const about = {
   /** Put a photo in /public and set e.g. '/headshot.jpg'. */
-  photo: null as string | null,
+  photo: '/profile.jpeg' as string | null,
   bio: [
     'I’m a software engineer and full-stack developer who likes building practical, scalable and user-focused software.',
     'I enjoy working across the whole development lifecycle — designing interfaces, architecting back ends, modelling databases, building APIs, deploying, and improving what’s shipped.',
