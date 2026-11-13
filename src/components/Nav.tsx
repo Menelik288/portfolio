@@ -50,9 +50,11 @@ export default function Nav({ theme, onToggleTheme }: { theme: Theme; onToggleTh
     >
       <div className="container-x flex h-[72px] items-center justify-between">
         <Link to="/" className="flex items-center gap-3 font-sans font-semibold text-ink" aria-label={`${site.name} — home`}>
-          <span className="grid size-9 place-items-center rounded-lg bg-accent font-tech text-xs text-bg">
-            {site.initials}
-          </span>
+          <img
+            src="/profile.jpeg"
+            alt={site.name}
+            className="size-9 rounded-full object-cover border border-accent/40 shadow-xs"
+          />
           <span className="hidden sm:inline">{site.name}</span>
         </Link>
 
