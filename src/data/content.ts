@@ -49,9 +49,30 @@ export const about = {
     'I’m especially interested in where full-stack development, systems programming and AI-powered development meet. My approach: build, learn, break, understand, improve.',
   ],
   stats: [
-    { value: 10, suffix: 'K+', label: 'Visitors to NOTFLIX in its first 3 months' },
-    { value: 5, suffix: '', label: 'Projects live in production' },
-    { value: 9, suffix: '', label: 'Public repositories on GitHub' },
+    {
+      value: 10,
+      suffix: 'K+',
+      label: 'Users & Visitors Reached',
+      detail: 'High-traffic consumer & web platforms built and deployed',
+      category: 'Impact',
+      icon: 'users' as const,
+    },
+    {
+      value: 5,
+      suffix: '+',
+      label: 'Production Systems Shipped',
+      detail: 'Enterprise ERPs, NGO platforms & mobile applications',
+      category: 'Delivery',
+      icon: 'layers' as const,
+    },
+    {
+      value: 100,
+      suffix: '%',
+      label: 'Full-Lifecycle Ownership',
+      detail: 'From schema design & REST APIs to responsive UI & deployment',
+      category: 'Engineering',
+      icon: 'code' as const,
+    },
   ],
   exploring: ['Agentic AI', 'Machine learning', 'Local LLMs', 'System design', 'Enterprise applications', 'Open source'],
 }
