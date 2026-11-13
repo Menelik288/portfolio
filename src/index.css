@@ -50,6 +50,18 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Hide native cursor on desktop when custom cursor is active */
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor-enabled,
+  html.custom-cursor-enabled body,
+  html.custom-cursor-enabled a,
+  html.custom-cursor-enabled button,
+  html.custom-cursor-enabled [role="button"],
+  html.custom-cursor-enabled canvas {
+    cursor: none !important;
+  }
+}
+
 body {
   margin: 0;
   background: var(--color-bg);
