@@ -46,11 +46,7 @@ export default function Hero() {
 
       <div className="container-x pointer-events-none relative z-10 pt-28 pb-28 md:pb-24">
         <div className="max-w-[640px] [&_a]:pointer-events-auto">
-          <p data-hero className="eyebrow flex items-center gap-3">
-            <span className="inline-block size-2 rounded-full bg-accent" />
-            Portfolio / {new Date().getFullYear()}
-          </p>
-          <h1 data-hero className="name-display mt-5 text-[clamp(2.6rem,1.5rem+5.2vw,5.5rem)]">
+          <h1 data-hero className="name-display text-[clamp(2.6rem,1.5rem+5.2vw,5.5rem)]">
             {site.name.split(' ')[0]}
             <br />
             {site.name.split(' ').slice(1).join(' ')}

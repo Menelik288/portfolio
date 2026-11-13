@@ -9,9 +9,9 @@ export const site = {
   name: 'Menelik Alemayehu',
   initials: 'MA',
   role: 'Full-stack developer',
-  tagline: 'Software engineering student building practical, scalable, user-focused software — from the database to the last pixel.',
+  tagline: 'Software engineer building practical, scalable, user-focused software — from the database to the last pixel.',
   description:
-    'Portfolio of Menelik Alemayehu, a full-stack developer and software engineering student building web and mobile products with React, React Native, Node.js and PostgreSQL.',
+    'Portfolio of Menelik Alemayehu, a software engineer and full-stack developer building web and mobile products with React, React Native, Node.js and PostgreSQL.',
   /** Placeholder tags and placeholder entries show while developing (npm run dev) and are left out of the published build. */
   showPlaceholderTags: import.meta.env.DEV,
   /** Path to a .glb robot with nodes named "Head" and "Eye". null = built-in primitive head. */
@@ -44,7 +44,7 @@ export const about = {
   /** Put a photo in /public and set e.g. '/headshot.jpg'. */
   photo: null as string | null,
   bio: [
-    'I’m a software engineering student and full-stack developer who likes building practical, scalable and user-focused software.',
+    'I’m a software engineer and full-stack developer who likes building practical, scalable and user-focused software.',
     'I enjoy working across the whole development lifecycle — designing interfaces, architecting back ends, modelling databases, building APIs, deploying, and improving what’s shipped.',
     'I’m especially interested in where full-stack development, systems programming and AI-powered development meet. My approach: build, learn, break, understand, improve.',
   ],
