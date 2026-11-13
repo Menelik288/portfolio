@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import About from '../components/About'
 import Contact from '../components/Contact'
@@ -14,9 +14,23 @@ import { useSeo } from '../lib/useSeo'
 export default function Home() {
   useSeo()
   const { hash, key } = useLocation()
+  const isFirstMount = useRef(true)
 
-  // Nav links are /#section — scroll to the section whenever the hash changes.
+  // On page refresh or first load, always guarantee scroll starts at the hero section (top).
+  // Only scroll to section when the user actively navigates via nav links during their session.
   useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual'
+      }
+      window.scrollTo(0, 0)
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname)
+      }
+      return
+    }
+
     if (!hash) return
     const t = setTimeout(() => {
       document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth' })

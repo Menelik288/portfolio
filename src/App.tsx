@@ -2,6 +2,9 @@ import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+ScrollTrigger.clearScrollMemory('manual')
+
 import CustomCursor from './components/CustomCursor'
 import Footer from './components/Footer'
 import Nav from './components/Nav'
