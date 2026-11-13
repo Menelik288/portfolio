@@ -74,8 +74,8 @@ export default function Contact() {
           }}
           aria-invalid={!!err}
           aria-describedby={err ? `cf-${name}-err` : undefined}
-          className={`w-full rounded-xl border bg-bg px-4 py-3 text-ink placeholder:text-muted/60 transition-colors focus:border-accent focus:outline-none ${
-            err ? 'border-danger' : 'border-line'
+          className={`w-full rounded-xl border bg-surface/30 backdrop-blur-md px-4 py-3 text-ink placeholder:text-muted/60 transition-all focus:border-accent focus:bg-surface/50 focus:outline-none focus:ring-1 focus:ring-accent/40 ${
+            err ? 'border-danger' : 'border-line/70'
           }`}
           {...props}
         />

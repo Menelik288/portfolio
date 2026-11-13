@@ -74,16 +74,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Decorative HUD readout beside the robot */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-8 bottom-10 z-10 hidden text-right font-sans text-[10px] leading-relaxed font-semibold tracking-[0.25em] text-accent uppercase lg:block"
-      >
-        <p className="flex items-center justify-end gap-2">
-          <span className="size-1.5 rounded-full bg-accent" /> Optic online
-        </p>
-        <p className="text-ink/50">Tracking — cursor</p>
-      </div>
+
 
       <Link
         to="/#about"

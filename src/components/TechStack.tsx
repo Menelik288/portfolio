@@ -32,7 +32,7 @@ export default function TechStack() {
                     {g.items.map((t) => (
                       <li
                         key={t}
-                        className="rounded-full border border-line bg-bg px-3.5 py-1.5 text-sm text-ink transition-colors hover:border-accent hover:text-accent"
+                        className="rounded-full border border-line/60 bg-surface-2/40 backdrop-blur-md px-3.5 py-1.5 text-sm text-ink transition-all hover:border-accent hover:text-accent hover:bg-surface-2/60 shadow-xs"
                       >
                         {t}
                       </li>

@@ -35,7 +35,7 @@ export default function Nav({ theme, onToggleTheme }: { theme: Theme; onToggleTh
       type="button"
       onClick={onToggleTheme}
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
-      className="grid size-11 place-items-center rounded-full border border-line text-ink transition-colors hover:border-accent hover:text-accent"
+      className="grid size-11 place-items-center rounded-full border border-line/60 bg-surface/30 backdrop-blur-md text-ink transition-all hover:border-accent hover:text-accent hover:bg-surface/50 shadow-sm"
     >
       {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
     </button>
@@ -45,7 +45,7 @@ export default function Nav({ theme, onToggleTheme }: { theme: Theme; onToggleTh
     <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-300 ${
-        overHero ? 'border-b border-transparent bg-transparent' : 'border-b border-line bg-bg/90 backdrop-blur-md'
+        overHero ? 'border-b border-transparent bg-transparent' : 'border-b border-line/50 bg-bg/60 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.1)]'
       }`}
     >
       <div className="container-x flex h-[72px] items-center justify-between">
