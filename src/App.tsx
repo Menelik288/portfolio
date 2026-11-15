@@ -1,22 +1,30 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect, useMemo } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 ScrollTrigger.clearScrollMemory('manual')
 
-import CustomCursor from './components/CustomCursor'
 import Footer from './components/Footer'
 import Nav from './components/Nav'
 import { track } from './lib/analytics'
+import { hasWebGL, isCoarsePointer, prefersReducedMotion } from './lib/env'
 import { useTheme } from './lib/theme'
 import CaseStudy from './pages/CaseStudy'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 
+// The saucer rides above every section, so it lives outside the page routes.
+const CursorUfo = lazy(() => import('./three/CursorUfo'))
+
 export default function App() {
   const location = useLocation()
   const { theme, toggle } = useTheme()
+  // No cursor to chase on touch, and nothing to animate under reduced motion.
+  const showUfo = useMemo(
+    () => hasWebGL() && !prefersReducedMotion() && !isCoarsePointer(),
+    [],
+  )
 
   useEffect(() => {
     track('pageview', { path: location.pathname })
@@ -30,7 +38,11 @@ export default function App() {
       >
         Skip to content
       </a>
-      <CustomCursor />
+      {showUfo && (
+        <Suspense fallback={null}>
+          <CursorUfo />
+        </Suspense>
+      )}
       {/* Liquid background ambient lights for frosted glass refraction */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
         <div className="absolute -top-[10%] left-[5%] h-[500px] w-[500px] rounded-full bg-accent/10 blur-[130px]" />

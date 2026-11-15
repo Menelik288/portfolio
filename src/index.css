@@ -50,16 +50,12 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* Hide native cursor on desktop when custom cursor is active */
-@media (hover: hover) and (pointer: fine) {
-  html.custom-cursor-enabled,
-  html.custom-cursor-enabled body,
-  html.custom-cursor-enabled a,
-  html.custom-cursor-enabled button,
-  html.custom-cursor-enabled [role="button"],
-  html.custom-cursor-enabled canvas {
-    cursor: none !important;
-  }
+/* The saucer's canvas floats over the page and must never take a click.
+   react-three-fiber inlines `pointer-events: auto` on its container, so the
+   rule has to win against an inline style. */
+.ufo-layer,
+.ufo-layer * {
+  pointer-events: none !important;
 }
 
 body {

@@ -5,7 +5,6 @@ import { ArrowRight } from 'lucide-react'
 import { site } from '../data/content'
 import { hasWebGL, isCoarsePointer, prefersReducedMotion } from '../lib/env'
 import { useThemeName } from '../lib/theme'
-import { PlaceholderTag } from './ui'
 
 // The whole three.js bundle is split out and only fetched after first paint.
 const HeroScene = lazy(() => import('../three/HeroScene'))
@@ -31,8 +30,8 @@ export default function Hero() {
       {/* Static poster: shown while the 3D scene loads, and permanently if WebGL is unavailable */}
       <img
         src="/hero-poster.svg"
-        alt={webgl ? '' : 'Illustration of a robot head with a glowing red eye'}
-        className={`absolute inset-0 h-full w-full object-cover object-[72%_30%] transition-opacity duration-700 ${ready ? 'opacity-0' : 'opacity-100'}`}
+        alt={webgl ? '' : 'Illustration of an astronaut drifting among orbiting planets'}
+        className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700 ${ready ? 'opacity-0' : 'opacity-100'}`}
       />
       {webgl && (
         <div className={`absolute inset-0 transition-opacity duration-700 ${ready ? 'opacity-100' : 'opacity-0'}`}>
@@ -66,11 +65,6 @@ export default function Hero() {
               Contact
             </Link>
           </div>
-          {!site.robotModelUrl && (
-            <p data-hero className="mt-8">
-              <PlaceholderTag label="Robot: placeholder model built from primitives" />
-            </p>
-          )}
         </div>
       </div>
 

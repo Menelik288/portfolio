@@ -14,8 +14,6 @@ export const site = {
     'Portfolio of Menelik Alemayehu, a software engineer and full-stack developer building web and mobile products with React, React Native, Node.js and PostgreSQL.',
   /** Placeholder tags and placeholder entries show while developing (npm run dev) and are left out of the published build. */
   showPlaceholderTags: import.meta.env.DEV,
-  /** Path to a .glb robot with nodes named "Head" and "Eye". null = built-in primitive head. */
-  robotModelUrl: null as string | null,
   /** POST endpoint for the contact form (Formspree, Netlify Forms, your API…). null = the form opens the visitor's email app with the message filled in. */
   contactEndpoint: null as string | null,
   /** Put the file in /public and set e.g. '/resume.pdf'. null = button hidden behind a placeholder. */
